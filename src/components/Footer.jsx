@@ -4,15 +4,17 @@ import { Car, Mail, Phone, MapPin, ShieldCheck, Clock, Award, Heart } from 'luci
 export default function Footer() {
   return (
     <footer className="border-t border-white/[0.08] bg-[#05070c] text-slate-400 relative z-10">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 w-full py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8 mb-12">
           
           {/* Brand Info */}
           <div className="lg:col-span-2 space-y-4">
-            <Link to="/" className="flex items-center gap-3 no-underline">
-              <div className="w-10 h-10 rounded-2xl bg-gradient-to-tr from-emerald-500 via-teal-400 to-cyan-500 flex items-center justify-center shadow-lg shadow-emerald-500/20">
-                <Car size={22} className="text-slate-950 stroke-[2.5]" />
-              </div>
+            <Link to="/" className="flex items-center gap-3 no-underline group">
+              <img
+                src="/logo.svg"
+                alt="RentWheels Logo"
+                className="w-10 h-10 rounded-2xl shadow-lg shadow-emerald-500/20 group-hover:scale-105 transition-all duration-300 object-contain"
+              />
               <span className="text-2xl font-black tracking-tight text-white font-['Outfit']">
                 Rent<span className="text-emerald-400">Wheels</span>
               </span>

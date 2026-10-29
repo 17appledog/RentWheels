@@ -78,7 +78,7 @@ export default function RentalHistory() {
   }
 
   return (
-    <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
+    <div className="max-w-5xl mx-auto px-6 sm:px-10 lg:px-16 py-10 sm:py-14 w-full">
       
       {/* Header */}
       <motion.div

@@ -23,7 +23,7 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 w-full backdrop-blur-xl bg-[#07090e]/85 border-b border-white/[0.08]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 w-full">
         <div className="flex items-center justify-between h-20">
           
           {/* Logo */}
@@ -32,8 +32,12 @@ export default function Navbar() {
             onClick={() => setMobileMenuOpen(false)}
             className="flex items-center gap-3 no-underline group"
           >
-            <div className="w-10 h-10 rounded-2xl bg-gradient-to-tr from-emerald-500 via-teal-400 to-cyan-500 flex items-center justify-center shadow-lg shadow-emerald-500/25 group-hover:shadow-emerald-500/40 transition-all duration-300">
-              <Car size={22} className="text-slate-950 stroke-[2.5]" />
+            <div className="relative">
+              <img
+                src="/logo.svg"
+                alt="RentWheels Logo"
+                className="w-10 h-10 rounded-2xl shadow-lg shadow-emerald-500/25 group-hover:shadow-emerald-500/40 group-hover:scale-105 transition-all duration-300 object-contain"
+              />
             </div>
             <div className="flex flex-col">
               <span className="text-xl font-black tracking-tight text-white font-['Outfit'] flex items-center">
@@ -46,13 +50,13 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Center Navigation Links */}
-          <nav className="hidden md:flex items-center gap-1.5 px-4 py-2 rounded-full bg-white/[0.04] border border-white/[0.08]">
+          <nav className="hidden md:flex items-center gap-1.5 p-1.5 rounded-full bg-white/[0.03] border border-white/[0.08] backdrop-blur-md">
             <Link
               to="/"
-              className={`px-4 py-1.5 rounded-full text-sm font-semibold transition-all no-underline ${
+              className={`px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold transition-all no-underline ${
                 isActive('/')
-                  ? 'bg-emerald-500 text-slate-950 shadow-md shadow-emerald-500/20'
-                  : 'text-slate-300 hover:text-white hover:bg-white/[0.06]'
+                  ? 'bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 shadow-sm shadow-emerald-500/10'
+                  : 'text-slate-300 hover:text-white hover:bg-white/[0.05] border border-transparent'
               }`}
             >
               Home
@@ -60,10 +64,10 @@ export default function Navbar() {
 
             <Link
               to="/fleet"
-              className={`px-4 py-1.5 rounded-full text-sm font-semibold transition-all no-underline ${
+              className={`px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold transition-all no-underline ${
                 isActive('/fleet')
-                  ? 'bg-emerald-500 text-slate-950 shadow-md shadow-emerald-500/20'
-                  : 'text-slate-300 hover:text-white hover:bg-white/[0.06]'
+                  ? 'bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 shadow-sm shadow-emerald-500/10'
+                  : 'text-slate-300 hover:text-white hover:bg-white/[0.05] border border-transparent'
               }`}
             >
               Fleet Catalog
@@ -72,13 +76,13 @@ export default function Navbar() {
             {user && !isAdmin && (
               <Link
                 to="/history"
-                className={`flex items-center gap-1.5 px-4 py-1.5 rounded-full text-sm font-semibold transition-all no-underline ${
+                className={`flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold transition-all no-underline ${
                   isActive('/history')
-                    ? 'bg-emerald-500 text-slate-950 shadow-md shadow-emerald-500/20'
-                    : 'text-slate-300 hover:text-white hover:bg-white/[0.06]'
+                    ? 'bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 shadow-sm shadow-emerald-500/10'
+                    : 'text-slate-300 hover:text-white hover:bg-white/[0.05] border border-transparent'
                 }`}
               >
-                <History size={15} />
+                <History size={14} />
                 <span>My Bookings</span>
               </Link>
             )}
@@ -86,13 +90,13 @@ export default function Navbar() {
             {isAdmin && (
               <Link
                 to="/admin"
-                className={`flex items-center gap-1.5 px-4 py-1.5 rounded-full text-sm font-semibold transition-all no-underline ${
+                className={`flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold transition-all no-underline ${
                   isActive('/admin')
-                    ? 'bg-emerald-500 text-slate-950 shadow-md shadow-emerald-500/20'
-                    : 'text-slate-300 hover:text-white hover:bg-white/[0.06]'
+                    ? 'bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 shadow-sm shadow-emerald-500/10'
+                    : 'text-slate-300 hover:text-white hover:bg-white/[0.05] border border-transparent'
                 }`}
               >
-                <LayoutDashboard size={15} />
+                <LayoutDashboard size={14} />
                 <span>Admin Console</span>
               </Link>
             )}
@@ -127,13 +131,13 @@ export default function Navbar() {
               <div className="flex items-center gap-3">
                 <Link
                   to="/login"
-                  className="px-4 py-2 text-sm font-semibold text-slate-300 hover:text-white transition-colors no-underline"
+                  className="px-3.5 py-2 text-xs sm:text-sm font-semibold text-slate-300 hover:text-white transition-colors no-underline"
                 >
                   Sign In
                 </Link>
                 <Link
                   to="/signup"
-                  className="flex items-center gap-1.5 px-5 py-2.5 rounded-full text-sm font-bold text-slate-950 bg-gradient-to-r from-emerald-400 to-cyan-400 hover:from-emerald-300 hover:to-cyan-300 shadow-lg shadow-emerald-500/20 hover:shadow-emerald-500/35 transition-all no-underline"
+                  className="flex items-center gap-1.5 px-4.5 py-2 rounded-full text-xs sm:text-sm font-bold text-slate-950 bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400 hover:from-emerald-300 hover:to-cyan-300 shadow-md shadow-emerald-500/20 hover:shadow-emerald-500/35 transition-all no-underline"
                 >
                   <span>Get Started</span>
                   <ArrowRight size={14} />

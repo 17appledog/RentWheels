@@ -53,13 +53,12 @@ export default function LoginPage() {
         {/* Header */}
         <div className="text-center mb-8">
           <motion.div
-            className="w-16 h-16 mx-auto mb-4 rounded-2xl flex items-center justify-center"
-            style={{ background: 'linear-gradient(135deg, #10b981, #06b6d4)' }}
+            className="w-16 h-16 mx-auto mb-4"
             initial={{ rotate: -10 }}
             animate={{ rotate: 0 }}
             transition={{ type: 'spring', damping: 10 }}
           >
-            <Car size={30} className="text-white" />
+            <img src="/logo.svg" alt="RentWheels Logo" className="w-16 h-16 rounded-2xl shadow-xl shadow-emerald-500/25" />
           </motion.div>
           <h1 className="text-3xl font-bold gradient-text mb-2" style={{ fontFamily: 'var(--font-heading)' }}>
             Welcome Back
